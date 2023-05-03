@@ -13,6 +13,10 @@ export class UsersService {
     return await this.userRepository.create<User>(user);
   }
 
+  async findAll(): Promise<User[]> {
+    return await this.userRepository.findAll();
+  }
+
   async findOneByEmail(email: string): Promise<User> {
     return await this.userRepository.findOne<User>({ where: { email } });
   }
